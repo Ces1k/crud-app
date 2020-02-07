@@ -8,5 +8,6 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 
 
-from app.static.models import author
-from app.static.models import book
+from app.static.models import Author
+from app.static.models import Book
+from app import views

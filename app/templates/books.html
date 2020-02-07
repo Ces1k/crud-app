@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="data">
+    {% if books|length < 1 %}
+    <p>No data available yet. Add some using form above.</1>
+    {% else %}
+        <p class="title">All books:</p>
+        {% for book in books %}
+            <p class="regular">- {{ book }}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

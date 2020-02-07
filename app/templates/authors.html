@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="data">
+    {% if authors|length < 1 %}
+    <p>No data available yet. Add some using form above.</1>
+    {% else %}
+        <p class="title">All authors:</p>
+        {% for author in authors %}
+            <p class="regular">- {{ author }}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

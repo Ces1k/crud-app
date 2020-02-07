@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form action="/" method="POST">
+    <table>
+        <tr>
+            <td class="input-title">Author:</td>
+            <td>
+                <input class="input" type="text" name="author" id="author" required><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="input-title">Title:</td>
+            <td>
+                <input class="input" type="text" name="title" id="title" required></textarea><br>
+            </td>
+        </tr>
+    </table>
+    <input class="submit-button" type="submit" value="Submit">
+</form>
+<div class="data">
+    {% if authors|length < 1 %}
+    <p>No data available yet. Add some using form above.</1>
+    {% else %}
+        {% for author in authors %}
+            <p>{{ author }}: {{ author.books }}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}
